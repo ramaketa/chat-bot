@@ -25,7 +25,11 @@
                         {{message()?.created | passedTime | async}}
                     </div>
                 </div>
-                <div class="message__text">
+                <div class="message__text"
+                     [attr.data-test-id]="
+                        message()?.author?.type == authorTypeEnum.CHATBOT
+                        ? 'bot-message' : 'user-message'
+                     ">
                     {{message()?.text}}
                 </div>
             </div>

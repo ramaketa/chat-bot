@@ -1,13 +1,17 @@
 <div class="chat">
-    <div class="chat__message-list">
+    <div class="chat__message-list" data-test-id="message-area">
         @for (message of messageList(); track $index) {
             <app-message [message]="message"
                           [class]="message.author.type"></app-message>
+        } @empty {
+            <span class="chat__empty-message">Пока нет сообщений</span>
         }
     </div>
     <div class="chat__input">
-        <input type="text" placeholder="Введите запрос здесь">
-        <button>
+        <input type="text"
+               placeholder="Введите запрос здесь"
+               data-test-id="chat-input">
+        <button data-test-id="send-button">
             <svg xmlns="http://www.w3.org/2000/svg"
                  width="24"
                  height="24"
