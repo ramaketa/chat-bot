@@ -13,6 +13,7 @@ export const APP_ROUTES: Routes = [
     },
     {
         path: '**',
-        component: PageNotFoundComponent
+        component: PageNotFoundComponent,
+        title: 'Страница не найдена'
     }
 ];

@@ -1,4 +1,4 @@
-import { CommandResponse } from '../models/command-response.model';
+import { CommandResponse } from '../models/command/command-response.model';
 
 /**
  * Ответ-заглушка для имитации серверного взаимодействия
