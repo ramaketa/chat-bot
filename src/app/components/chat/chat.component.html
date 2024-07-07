@@ -1,17 +1,30 @@
 <div class="chat">
-    <div class="chat__message-list" data-test-id="message-area">
+    <div #messageArea class="chat__message-list"
+         data-test-id="message-area"
+    >
         @for (message of messageList(); track $index) {
             <app-message [message]="message"
                           [class]="message.author.type"></app-message>
         } @empty {
-            <span class="chat__empty-message">Пока нет сообщений</span>
+            @if(!isLoading) {
+                <span class="chat__empty-message">Пока нет сообщений</span>
+            }
         }
+    @if(sendingRequest() || isLoading()) {
+        <div class="typing-loader"></div>
+    }
     </div>
     <div class="chat__input">
         <input type="text"
                placeholder="Введите запрос здесь"
-               data-test-id="chat-input">
-        <button data-test-id="send-button">
+               data-test-id="chat-input"
+               [formControl]="messageCtrl"
+               (keyup.enter)="sendMessage()"
+               >
+        <button data-test-id="send-button"
+                [disabled]="sendingRequest()"
+                (click)="sendMessage()"
+        >
             <svg xmlns="http://www.w3.org/2000/svg"
                  width="24"
                  height="24"

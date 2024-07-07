@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet, TitleStrategy } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { ContentComponent } from './components/layout/content/content.component';
 

@@ -3,7 +3,7 @@ import { Observable, delay, of } from "rxjs";
 import { RESPONSE_MOCK } from "../constants/response-mock";
 
 @Injectable()
-export class CommandApiService {
+export class CommandsService {
 
     /**
      * Получить ответ по запросу пользователя
@@ -12,12 +12,11 @@ export class CommandApiService {
      */
     getCommandListInfo(userMessage: string): Observable<string> {
         const answer: string = RESPONSE_MOCK.commands
-            .find((command) => command.command === userMessage)?.command
+            .find((command) => command.command.toLowerCase() === userMessage.toLocaleLowerCase())?.response
             ?? RESPONSE_MOCK.unknownCommandResponse;
 
         return of(answer)
             .pipe(delay(2000)); // Иммитация серверного запроса
     }
-
 
 }
