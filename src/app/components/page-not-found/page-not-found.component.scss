@@ -1,0 +1,46 @@
+@import "../../../styles/palette.scss";
+
+.pnf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20vh auto;
+  gap: 1rem;
+
+  &__code {
+    color: $primary;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  &__title {
+    color: $text-primary;
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+
+  &__description {
+    color: $text-hint;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+
+  &__button {
+    cursor: pointer;
+
+    font-weight: 300;
+    font-size: 0.75rem;
+
+    color: $text-secondary;
+    background-color: $primary;
+
+    border: none;
+    border-radius: 5px;
+
+    padding: .75rem 1.5rem;
+
+    &:hover {
+      background-color: $primary-active;
+    }
+  }
+}
