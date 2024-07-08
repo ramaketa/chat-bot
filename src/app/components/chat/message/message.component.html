@@ -3,13 +3,13 @@
          [class]="'message-container_' + message()?.author?.type">
             @switch (message()?.author?.type) {
                 @case (authorTypeEnum.CHATBOT) {
-                    <img src="/assets/icons/bot.svg"
+                    <img src="assets/icons/bot.svg"
                          alt="chatbot-icon"
                          class="author-icon"
                     >
                 }
                 @case (authorTypeEnum.USER) {
-                    <img src="/assets/icons/user.svg"
+                    <img src="assets/icons/user.svg"
                          alt="chatbot-icon"
                          class="author-icon"
                     >

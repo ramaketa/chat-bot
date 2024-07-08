@@ -41,7 +41,7 @@ export class ChatComponent {
     effect(() => {
       if (this.messageList()) {
         setTimeout(() => {
-          this.messageArea.nativeElement.lastElementChild.scrollIntoView({
+          this.messageArea.nativeElement?.lastElementChild?.scrollIntoView({
             behavior: 'smooth',
             block: 'end',
             inline: 'nearest'
