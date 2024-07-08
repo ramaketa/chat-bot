@@ -25,3 +25,15 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Testing
+Цршду testing, pay attention to adding timeouts to simulate the operation of the server api:
+1. When receiving a list of messages during application initialization
+   - delay 1sec
+   - to configure it in the method MessagesService.getAll()
+2. When receiving a response to the user from the chatbot
+   - delay 2сек
+   - to configure it in the method CommandsService.getCommandListInfo()
+
+## github pages
+The project deployed on[githubpages](https://ramaketa.github.io/chat-bot/chat)
