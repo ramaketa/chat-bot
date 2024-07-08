@@ -27,7 +27,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 ## Testing
-Цршду testing, pay attention to adding timeouts to simulate the operation of the server api:
+While testing, pay attention to adding timeouts to simulate the operation of the server api:
 1. When receiving a list of messages during application initialization
    - delay 1sec
    - to configure it in the method MessagesService.getAll()
