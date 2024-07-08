@@ -3,7 +3,7 @@ export class DateHelper {
     /**
      * Функция получения прошедшего времени
      * @example 60000ms -> 1 мин
-     * @param passedTime: number - прошедшее время в миллисекундах
+     * @param passedTime - время в мс
      */
     static getPassedTimeWithDeclaration(passedTime: number): string {
         const seconds = Number((passedTime / 1000).toFixed(1));
@@ -15,12 +15,12 @@ export class DateHelper {
             return "< 1 мин"
         }
         if (minutes < 60) {
-            return minutes + " мин"
+            return Math.floor(minutes) + " мин"
         }
         if (hours < 24) {
-            return hours + " ч"
+            return Math.floor(hours) + " ч"
         }
-        return days + " дней"
+        return Math.floor(days) + " дней"
     }
 
 }
